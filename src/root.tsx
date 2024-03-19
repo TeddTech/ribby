@@ -9,6 +9,7 @@ import { RouterHead } from "./components/router-head/router-head";
 import "./global.css";
 
 export default component$(() => {
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		console.log(
 			"%c🔍 Qwik Click-To-Source",
