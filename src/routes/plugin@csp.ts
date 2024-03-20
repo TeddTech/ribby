@@ -16,12 +16,13 @@ export const onRequest: RequestHandler = async (event) => {
 		`frame-ancestors 'self'`,
 		`img-src 'self' https://raw.githubusercontent.com/xataio/ https://authjs.dev/img/providers/ https://cdn.builder.io/api/ data: blob:`,
 		`object-src 'none'`,
-		`script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
+		`script-src 'self' 'unsafe-inline' https: 'nonce-${nonce}' 'strict-dynamic'`,
 		`frame-src 'self' 'nonce-${nonce}'`,
 		`script-src-attr 'none'`,
 		`style-src 'self' https: 'unsafe-inline'`,
 		"block-all-mixed-content",
 		"upgrade-insecure-requests",
+		// "require-trusted-types-for 'script'",
 	];
 
 	if (event.env.get("VERCEL_ENV") === "preview") {
@@ -41,6 +42,7 @@ export const onRequest: RequestHandler = async (event) => {
 			`style-src 'self' https: 'unsafe-inline'`,
 			"block-all-mixed-content",
 			"upgrade-insecure-requests",
+			// "require-trusted-types-for 'script'",
 		];
 	}
 	event.headers.set("Content-Security-Policy", csp.join("; "));
