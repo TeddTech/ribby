@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useServerData, useVisibleTask$ } from "@builder.io/qwik";
 import {
 	QwikCityProvider,
 	RouterOutlet,
@@ -40,14 +40,18 @@ export default component$(() => {
 	 *
 	 * Don't remove the `<head>` and `<body>` elements.
 	 */
-
+	const nonce = useServerData<string | undefined>("nonce");
 	return (
 		<QwikCityProvider>
 			<head>
 				<meta charSet="utf-8" />
-				<link rel="manifest" href="/manifest.json" />
+				<link
+					rel="manifest"
+					href="/manifest.json"
+					crossOrigin="use-credentials"
+				/>
 				<RouterHead />
-				<ServiceWorkerRegister />
+				<ServiceWorkerRegister nonce={nonce} />
 			</head>
 			<body lang="en">
 				<RouterOutlet />
