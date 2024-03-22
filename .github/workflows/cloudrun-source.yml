@@ -1,5 +1,5 @@
 name: Deploy to Cloud Run from Source
-run-name: ${{ github.actor }} deploying frontend Cloud Run service from source 🚀
+run-name: ${{ github.actor }} deploying Frontend Cloud Run service from Source 🚀
 
 on:
   workflow_dispatch:
