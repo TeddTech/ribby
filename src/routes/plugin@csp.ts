@@ -17,6 +17,7 @@ export const onRequest: RequestHandler = async (event) => {
 		`img-src 'self' https://raw.githubusercontent.com/xataio/ https://authjs.dev/img/providers/ https://cdn.builder.io/api/ data: blob:`,
 		`object-src 'none'`,
 		`script-src 'self' 'unsafe-inline' https: 'nonce-${nonce}' 'strict-dynamic'`,
+		`script-src-elem 'self' 'unsafe-inline' https:`,
 		`frame-src 'self' 'nonce-${nonce}'`,
 		`script-src-attr 'none'`,
 		`style-src 'self' https: 'unsafe-inline'`,

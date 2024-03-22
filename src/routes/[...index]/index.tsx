@@ -14,15 +14,17 @@ import { CUSTOM_COMPONENTS } from "../../components/builder-registry";
 // Use the `useBuilderContent` route loader to get your content from Builder.
 // `routeLoader$()` takes an async function to fetch content
 // from Builder with using `getContent()`.
-export const useBuilderContent = routeLoader$(async ({ url, error }) => {
+export const useBuilderContent = routeLoader$(async ({ url, env, error }) => {
 	const isPreviewing = url.searchParams.has("builder.preview");
+	const PUBLIC_BUILDER_API_KEY =
+		env.get("PUBLIC_BUILDER_API_KEY") || "BUILDER_API_NOT_FOUND";
 
 	// Fetch Builder.io Visual CMS content using the Qwik SDK.
 	// The public API key is set in the .env file at the root
 	// https://www.builder.io/c/docs/using-your-api-key
 	const builderContent = await getContent({
 		model: "page",
-		apiKey: import.meta.env.PUBLIC_BUILDER_API_KEY,
+		apiKey: PUBLIC_BUILDER_API_KEY,
 		options: getBuilderSearchParams(url.searchParams),
 		userAttributes: {
 			urlPath: url.pathname,
@@ -36,7 +38,7 @@ export const useBuilderContent = routeLoader$(async ({ url, error }) => {
 	}
 
 	// return content fetched from Builder, which is JSON
-	return builderContent;
+	return { builderContent, PUBLIC_BUILDER_API_KEY };
 });
 
 export default component$(() => {
@@ -47,8 +49,8 @@ export default component$(() => {
 	return (
 		<RenderContent
 			model="page"
-			content={builderContent.value}
-			apiKey={import.meta.env.PUBLIC_BUILDER_API_KEY}
+			content={builderContent.value.builderContent}
+			apiKey={builderContent.value.PUBLIC_BUILDER_API_KEY}
 			customComponents={CUSTOM_COMPONENTS}
 		/>
 	);
@@ -57,6 +59,6 @@ export default component$(() => {
 export const head: DocumentHead = ({ resolveValue }) => {
 	const builderContent = resolveValue(useBuilderContent);
 	return {
-		title: builderContent?.data?.title,
+		title: builderContent.builderContent?.data?.title,
 	};
 };

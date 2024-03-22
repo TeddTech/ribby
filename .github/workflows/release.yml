@@ -4,9 +4,6 @@ run-name: ${{ github.actor }} is cutting a release 🔖
 on:
   workflow_dispatch:
 
-env:
-  ENV_TYPE: 'prod'
-
 jobs:
   release:
     permissions:
