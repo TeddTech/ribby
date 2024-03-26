@@ -81,7 +81,7 @@ jobs:
       - name: Generate Dockerfile (Export Environment Variables)  
         run: |-
           export XATA_API_KEY=${{ env.XATA_API_KEY }}
-          export ORIGIN=${{env.ORIGIN}}
+          export ORIGIN=${{ env.ORIGIN }}
           export AUTH_SECRET=${{ secrets.AUTH_SECRET }}
           envsubst < ./template.Dockerfile > Dockerfile
 

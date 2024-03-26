@@ -6,12 +6,14 @@ WORKDIR /app
 # It is recommended that you only install production dependencies with
 # `npm i --omit=dev`. You may need to check which dependencies are missing
 
-ARG XATA_API_KEY=${XATA_API_KEY }
-ARG PROTOCOL_HEADER
-ARG HOST_HEADER
+ARG XATA_API_KEY=${XATA_API_KEY}
+ARG ORIGIN=https://ribby-test-4dcuo5fhla-uc.a.run.app
+ARG PROTOCOL_HEADER=x-forwarded-proto
+ARG HOST_HEADER=x-forwarded-host
 
-ENV PROTOCOL_HEADER=$PROTOCOL_HEADER
-ENV HOST_HEADER=$HOST_HEADER
+ENV ORIGIN=$ORIGIN
+ENV PROTOCOL_HEADER=x-forwarded-proto
+ENV HOST_HEADER=x-forwarded-host
 
 RUN npm i
 RUN npm run build
