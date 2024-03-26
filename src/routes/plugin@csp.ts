@@ -1,12 +1,9 @@
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { isDev } from "@builder.io/qwik/build";
-
 export const onRequest: RequestHandler = async (event) => {
 	if (isDev) return; // Will not return CSP headers in dev mode
-
 	const nonce = Date.now().toString(36); // Your custom nonce logic here
 	event.sharedMap.set("@nonce", nonce);
-
 	let csp = [
 		`default-src 'self'`,
 		`connect-src 'self' https://cdn.builder.io https://vitals.vercel-insights.com`,
@@ -25,7 +22,6 @@ export const onRequest: RequestHandler = async (event) => {
 		"upgrade-insecure-requests",
 		// "require-trusted-types-for 'script'",
 	];
-
 	if (event.env.get("VERCEL_ENV") === "preview") {
 		csp = [
 			`manifest-src 'self'`,

@@ -12,8 +12,10 @@
   "trustedDependencies-annotation": "Needed for bun to allow running install scripts",
   "type": "module",
   "devDependencies": {
+    "@auth/core": "^0.13.0",
     "@builder.io/dev-tools": "^0.0.7",
     "@builder.io/qwik": "^1.5.1",
+    "@builder.io/qwik-auth": "0.1.1",
     "@builder.io/qwik-city": "^1.5.1",
     "@builder.io/sdk-qwik": "^0.4.1",
     "@semantic-release/changelog": "^6.0.3",
@@ -35,6 +37,7 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
+    "@auth/xata-adapter": "^0.6.0",
     "@xata.io/client": "^0.29.3"
   },
   "lint-staged": {
