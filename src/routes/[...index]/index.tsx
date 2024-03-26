@@ -17,7 +17,7 @@ import { CUSTOM_COMPONENTS } from "../../components/builder-registry";
 export const useBuilderContent = routeLoader$(async ({ url, env, error }) => {
 	const isPreviewing = url.searchParams.has("builder.preview");
 	const PUBLIC_BUILDER_API_KEY =
-		env.get("PUBLIC_BUILDER_API_KEY") || "BUILDER_API_NOT_FOUND";
+		env.get("PUBLIC_BUILDER_API_KEY") || "BUILDER API NOT FOUND";
 
 	// Fetch Builder.io Visual CMS content using the Qwik SDK.
 	// The public API key is set in the .env file at the root
