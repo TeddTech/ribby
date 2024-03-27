@@ -10,7 +10,7 @@ on:
 
 env:
   PROJECT_ID: arched-logic-390516 # TODO: update Google Cloud project id
-  SERVICE: ribby # TODO: update Cloud Run service name
+  SERVICE: ribby-test # TODO: update Cloud Run service name
   REGION: us-central1 # TODO: update Cloud Run service region
   XATA_API_KEY: ${{ secrets.XATA_API_KEY }}
   XATA_BRANCH: ${{ secrets.XATA_BRANCH }}
