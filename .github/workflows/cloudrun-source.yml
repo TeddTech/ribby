@@ -30,7 +30,9 @@ jobs:
             exit 1
           fi
       - name: Show Environment type
-        run: echo "deploying.... SERVICE=${{ steps.env_type.outputs.SERVICE }}"
+        run: |
+          echo "${{ github.event.inputs.environment }}"
+          echo "deploying.... SERVICE=${{ steps.env_type.outputs.SERVICE }}"
     outputs:
       service: ${{ steps.env_type.outputs.SERVICE }}
 
@@ -64,9 +66,6 @@ jobs:
           npm i -g npm@latest
           npm audit signatures
 
-      - name: 'Running Production Build'
-        run: npm run build
-
       - name: Google Auth
         id: auth
         uses: 'google-github-actions/auth@v1'
@@ -78,10 +77,10 @@ jobs:
         run: |-
           echo ${{ steps.auth.outputs.access_token_expiration }}
 
-      - name: Generate Dockerfile (Export Environment Variables)  
+      - name: Generate Dockerfile (Export Environment Variables)
         run: |-
           export XATA_API_KEY=${{ env.XATA_API_KEY }}
-          export ORIGIN=${{env.ORIGIN}}
+          export ORIGIN=${{ env.ORIGIN }}
           export AUTH_SECRET=${{ secrets.AUTH_SECRET }}
           envsubst < ./template.Dockerfile > Dockerfile
 
@@ -117,6 +116,7 @@ jobs:
 
       - name: Show Output Deployment Output
         run: |-
+          echo ${{ env.ORIGIN }}
           echo "SHOW RESULTING URL"
           echo ${{ steps.run-deploy.outputs.url }}
 

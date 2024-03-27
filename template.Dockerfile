@@ -6,14 +6,20 @@ WORKDIR /app
 # It is recommended that you only install production dependencies with
 # `npm i --omit=dev`. You may need to check which dependencies are missing
 
-ARG XATA_API_KEY=${XATA_API_KEY }
-ARG PROTOCOL_HEADER
-ARG HOST_HEADER
+ARG XATA_API_KEY=${XATA_API_KEY}
+ARG AUTH_SECRET=${AUTH_SECRET}
+ARG ORIGIN=${ORIGIN}
+ARG PROTOCOL_HEADER=x-forwarded-proto
+ARG HOST_HEADER=x-forwarded-host
 
-ENV PROTOCOL_HEADER=$PROTOCOL_HEADER
-ENV HOST_HEADER=$HOST_HEADER
+ENV AUTH_SECRET=${AUTH_SECRET}
+ENV ORIGIN=${ORIGIN}
+ENV PROTOCOL_HEADER=x-forwarded-proto
+ENV HOST_HEADER=x-forwarded-host
 
+RUN ls -1
 RUN npm i
+RUN ls -1
 RUN npm run build
 RUN ls -1
 
