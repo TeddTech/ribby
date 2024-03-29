@@ -1,0 +1,37 @@
+name: Build Check
+run-name: ${{ github.actor }} pushed changes to ${{ github.ref_name }} 🏗️
+
+on:
+  pull_request:
+    branches:
+      - prod
+      - main
+
+env:
+  XATA_API_KEY: ${{ secrets.XATA_API_KEY }}
+
+jobs:
+  build:
+    name: Build Checker # and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Process
+        run: npm run build
+
+      # Run tests (if applicable)
+    #   - name: Run Tests
+    #     run: npm test
+
+      # Optionally, you can add more steps here for additional checks or tasks.
