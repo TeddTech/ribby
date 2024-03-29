@@ -3,6 +3,9 @@ run-name: ${{ github.actor }} is cutting a release 🔖
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - alpha
 
 jobs:
   release:
@@ -12,6 +15,7 @@ jobs:
       pull-requests: write
 
     runs-on: ubuntu-latest
+    if: github.base_ref == 'alpha'
     steps:
     #   - name: 'Generate token'
     #     id: generate_token
