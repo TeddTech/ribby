@@ -4,6 +4,9 @@ run-name: ${{ github.actor }} is cutting a release 🔖
 on:
   workflow_dispatch:
 
+env:
+  XATA_API_KEY: ${{ secrets.XATA_API_KEY }}
+
 jobs:
   release:
     permissions:
@@ -12,6 +15,7 @@ jobs:
       pull-requests: write
 
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/prod' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
     steps:
     #   - name: 'Generate token'
     #     id: generate_token
