@@ -12,6 +12,7 @@ jobs:
       pull-requests: write
 
     runs-on: ubuntu-latest
+    if: github.base_ref == 'prod' || github.base_ref == 'beta' || github.base_ref == 'alpha'
     steps:
     #   - name: 'Generate token'
     #     id: generate_token
