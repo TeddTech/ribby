@@ -26,15 +26,15 @@ const DEFAULT_HEADERS = {
 		`default-src 'self'`,
 		`base-uri 'self'`,
 		`font-src 'self' https: data:`,
-		`form-action 'self'`,
+		`form-action 'self' https://accounts.google.com/ https://www.facebook.com/ https://api.instagram.com/oauth/ https://www.instagram.com/oauth/ https://www.instagram.com/accounts/ https://www.tiktok.com/auth/ https://login.tidal.com/ https://api.soundcloud.com/ https://appleid.apple.com/auth/ https://accounts.spotify.com/`,
 		`frame-ancestors 'self'`,
-		`img-src 'self' data:`,
+		`img-src 'self' https://raw.githubusercontent.com/xataio/ https://authjs.dev/img/providers/ https://cdn.builder.io/api/ data: blob:`,
 		`object-src 'none'`,
 		`script-src 'self'`,
 		`script-src-attr 'none'`,
 		`style-src 'self' https: 'unsafe-inline'`,
 		"upgrade-insecure-requests",
-	].join(";"),
+	].join("; "),
 	"Cross-Origin-Embedder-Policy": "require-corp-or-same-origin",
 	"Cross-Origin-Opener-Policy": "same-origin-allow-popups",
 	"Cross-Origin-Resource-Policy": "same-origin",
@@ -60,7 +60,7 @@ const { router, notFound, staticFile } = createQwikCity({
 	getOrigin(req) {
 		// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Proto
 		const protocol = req.headers["x-forwarded-proto"] ?? "http";
-		const host = req.headers.host;
+		const host = req.headers["x-forwarded-host"] ?? req.headers.host;
 		return `${protocol}://${host}`;
 	},
 	getClientConn: (conn) => {

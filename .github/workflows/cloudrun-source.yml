@@ -3,28 +3,53 @@ run-name: ${{ github.actor }} deploying Frontend Cloud Run service from Source ð
 
 on:
   workflow_dispatch:
-
-# on:
-#   push:
-#     branches: [ "prod" ]
-
-env:
-  PROJECT_ID: arched-logic-390516 # TODO: update Google Cloud project id
-  SERVICE: ribby # TODO: update Cloud Run service name
-  REGION: us-central1 # TODO: update Cloud Run service region
-  XATA_API_KEY: ${{ secrets.XATA_API_KEY }}
-  XATA_BRANCH: ${{ secrets.XATA_BRANCH }}
-  PUBLIC_BUILDER_API_KEY: ${{ secrets.PUBLIC_BUILDER_API_KEY }}
+    inputs:
+      environment:
+        type: choice
+        description: Select deployment environment.
+        required: true
+        default: staging
+        options:
+        - staging
+        - production
 
 jobs:
+  set-env-var:
+    name: Set Buildtime and Runtime Environment Variables
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setting ${{github.event.inputs.environment}} Environment # TODO: update Cloud Run service name
+        id: env_type
+        run: |
+          if [ "${{ github.event.inputs.environment }}" = "staging" ] && [ "${{ github.ref }}" != "refs/heads/main" ] && [ "${{ github.ref }}" != "refs/heads/prod" ]; then
+            echo "SERVICE=ribby-test" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.inputs.environment }}" = "production" ] && [ "${{ github.ref }}" == "refs/heads/prod" ]; then
+            echo "SERVICE=ribby" >> "$GITHUB_OUTPUT"
+          else
+            echo "This workflow should only be triggered on prod or a feature branch."
+            exit 1
+          fi
+      - name: Show Environment type
+        run: |
+          echo "${{ github.event.inputs.environment }}"
+          echo "deploying.... SERVICE=${{ steps.env_type.outputs.SERVICE }}"
+    outputs:
+      service: ${{ steps.env_type.outputs.SERVICE }}
+
   deploy:
-    name: deploy
-    # Add 'id-token' with the intended permissions for workload identity federation
+    name: Deploy
     permissions:
       contents: 'read'
       id-token: 'write'
-
     runs-on: ubuntu-latest
+    needs: [set-env-var]
+    env:
+      PROJECT_ID: arched-logic-390516 # TODO: update Google Cloud project id
+      REGION: us-central1 # TODO: update Cloud Run service region
+      XATA_API_KEY: ${{ secrets.XATA_API_KEY }}
+      SERVICE: ${{ needs.set-env-var.outputs.service }}
+      ORIGIN: ${{ github.event.inputs.environment == 'staging' && secrets.ORIGIN_STAG || github.event.inputs.environment == 'production' && secrets.ORIGIN_PROD }}
+      URL: ${{ github.event.inputs.environment == 'staging' && secrets.ORIGIN_STAG || github.event.inputs.environment == 'production' && secrets.ORIGIN_PROD }}
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
@@ -42,9 +67,6 @@ jobs:
           npm i -g npm@latest
           npm audit signatures
 
-      - name: 'Running Production Build'
-        run: npm run build
-
       - name: Google Auth
         id: auth
         uses: 'google-github-actions/auth@v1'
@@ -56,8 +78,16 @@ jobs:
         run: |-
           echo ${{ steps.auth.outputs.access_token_expiration }}
 
+      - name: Generate Dockerfile (Export Environment Variables)
+        run: |-
+          export XATA_API_KEY=${{ env.XATA_API_KEY }}
+          export ORIGIN=${{ env.ORIGIN }}
+          export URL=${{ env.URL }}
+          export AUTH_SECRET=${{ secrets.AUTH_SECRET }}
+          envsubst < ./template.Dockerfile > Dockerfile
+
       - name: Deploy to Cloud Run
-        id: deploy
+        id: run-deploy
         uses: google-github-actions/deploy-cloudrun@v2
         with:
         #   NOTE: If required, update to the appropriate source folder
@@ -77,17 +107,22 @@ jobs:
           # --concurrency=80
           # --execution-environment=gen2
           env_vars: |
-            PUBLIC_BUILDER_API_KEY=${{ env.PUBLIC_BUILDER_API_KEY }}
+            PUBLIC_BUILDER_API_KEY=${{ secrets.PUBLIC_BUILDER_API_KEY }}
             XATA_API_KEY=${{ env.XATA_API_KEY }}
-            XATA_BRANCH=${{ env.XATA_BRANCH }}
-          # AUTH_SECRET=${{ secrets.AUTH_SECRET }}
-          # GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
-          # GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
-          # APPLE_SECRET=${{ secrets.APPLE_SECRET }}
+            AUTH_SECRET=${{ secrets.AUTH_SECRET }}
+            GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
+            GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
+            ORIGIN=${{ env.ORIGIN }}
+            URL=${{ env.URL}}
+            PROTOCOL_HEADER=x-forwarded-proto
+            HOST_HEADER=x-forwarded-host
 
-      # If required, use the Cloud Run url output in later steps
       - name: Show Output Deployment Output
-        run: echo ${{ steps.deploy.outputs.url }}
+        run: |-
+          echo ${{ env.ORIGIN }}
+          echo ${{ env.URL }}
+          echo "SHOW RESULTING URL"
+          echo ${{ steps.run-deploy.outputs.url }}
 
       - name: Adjust Traffic
         id: traffic
