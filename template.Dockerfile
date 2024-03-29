@@ -5,9 +5,25 @@ WORKDIR /app
 
 # It is recommended that you only install production dependencies with
 # `npm i --omit=dev`. You may need to check which dependencies are missing
-RUN npm i
-RUN npm run build
 
+ARG XATA_API_KEY=${XATA_API_KEY}
+ARG AUTH_SECRET=${AUTH_SECRET}
+ARG ORIGIN=${ORIGIN}
+ARG URL=${URL}
+ARG PROTOCOL_HEADER=x-forwarded-proto
+ARG HOST_HEADER=x-forwarded-host
+
+ENV AUTH_SECRET=${AUTH_SECRET}
+ENV ORIGIN=${ORIGIN}
+ENV URL=${URL}
+ENV PROTOCOL_HEADER=x-forwarded-proto
+ENV HOST_HEADER=x-forwarded-host
+
+RUN ls -1
+RUN npm i
+RUN ls -1
+RUN npm run build
+RUN ls -1
 
 # A light-weight image for running the app
 FROM gcr.io/distroless/nodejs18-debian11

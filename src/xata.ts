@@ -70,6 +70,15 @@ const tables = [
 		],
 		revLinks: [{ column: "session", table: "nextauth_users_sessions" }],
 	},
+	{
+		name: "blog-posts",
+		columns: [
+			{ name: "title", type: "string" },
+			{ name: "slug", type: "string" },
+			{ name: "description", type: "text" },
+			{ name: "pubDate", type: "datetime" },
+		],
+	},
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -95,6 +104,9 @@ export type NextauthUsersSessionsRecord = NextauthUsersSessions & XataRecord;
 export type NextauthSessions = InferredTypes["nextauth_sessions"];
 export type NextauthSessionsRecord = NextauthSessions & XataRecord;
 
+export type BlogPosts = InferredTypes["blog-posts"];
+export type BlogPostsRecord = BlogPosts & XataRecord;
+
 export type DatabaseSchema = {
 	nextauth_users: NextauthUsersRecord;
 	nextauth_accounts: NextauthAccountsRecord;
@@ -102,6 +114,7 @@ export type DatabaseSchema = {
 	nextauth_users_accounts: NextauthUsersAccountsRecord;
 	nextauth_users_sessions: NextauthUsersSessionsRecord;
 	nextauth_sessions: NextauthSessionsRecord;
+	"blog-posts": BlogPostsRecord;
 };
 
 const DatabaseClient = buildClient();
