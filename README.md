@@ -52,9 +52,6 @@ The `dev` command will server-side render (SSR) the output during development.
 npm start # or `yarn start`
 ```
 
-> Note: during dev mode, Vite may request a significant number of `.js` files.
-This does not represent a Qwik production build.
-
 ## Preview
 
 The preview command will create a production build of the client modules,
