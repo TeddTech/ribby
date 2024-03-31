@@ -26,7 +26,7 @@ jobs:
           elif [ "${{ github.event.inputs.environment }}" = "production" ] && [ "${{ github.ref }}" == "refs/heads/prod" ]; then
             echo "SERVICE=ribby" >> "$GITHUB_OUTPUT"
           else
-            echo "ERROR: This workflow should only be triggered on prod or a feature branch."
+            echo "ERROR: This workflow should only be triggered on a production (alpha, beta, prod) or a feature branch."
             exit 1
           fi
       - name: Show Environment type
