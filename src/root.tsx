@@ -58,6 +58,7 @@ export default component$(() => {
 			</head>
 			<body lang="en">
 				<RouterOutlet />
+				<script src="../node_modules/preline/preline.js" />
 			</body>
 		</QwikCityProvider>
 	);
