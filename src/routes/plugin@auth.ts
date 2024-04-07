@@ -1,3 +1,14 @@
+declare module "@auth/core/types" {
+	interface User {
+		handle: string;
+	}
+	interface Session {
+		user: {
+			handle: string;
+		} & DefaultSession["user"];
+	}
+}
+import type { Adapter } from "@auth/core/adapters";
 import type { Provider } from "@auth/core/providers";
 import AppleProvider from "@auth/core/providers/apple";
 import Facebook from "@auth/core/providers/facebook";
@@ -12,8 +23,7 @@ const client = getXataClient();
 
 export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 	serverAuth$(({ env }) => ({
-		// @ts-ignore
-		adapter: XataAdapter(client),
+		adapter: XataAdapter(client) as Adapter,
 		secret: env.get("AUTH_SECRET"),
 		trustHost: true,
 		providers: [
@@ -142,4 +152,22 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 				allowDangerousEmailAccountLinking: true,
 			}),
 		] as Provider[],
+		pages: {
+			signIn: "/signup",
+			signOut: "/logout",
+		},
+		callbacks: {
+			async session({ session, user }) {
+				// console.log("session", session);
+				// console.log("user", user);
+				// console.log("token", token);
+				return {
+					...session,
+					user: {
+						...session.user,
+						handle: user.handle,
+					},
+				};
+			},
+		},
 	}));

@@ -1,10 +1,10 @@
 import { builderDevTools } from "@builder.io/dev-tools/vite";
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
-import { type UserConfig, defineConfig } from "vite";
+import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig((): UserConfig => {
+export default defineConfig(() => {
 	// const env = loadEnv(mode, process.cwd(), "");
 	return {
 		plugins: [builderDevTools(), qwikCity(), qwikVite(), tsconfigPaths()],
@@ -23,11 +23,11 @@ export default defineConfig((): UserConfig => {
 				"Cache-Control": "public, max-age=0",
 			},
 		},
-		// dev: {
-		// 	headers: {
-		// 		"Cache-Control": "public, max-age=0",
-		// 	},
-		// },
+		dev: {
+			headers: {
+				"Cache-Control": "public, max-age=0",
+			},
+		},
 		preview: {
 			headers: {
 				"Cache-Control": "public, max-age=600",
