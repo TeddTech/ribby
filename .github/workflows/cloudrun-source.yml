@@ -18,16 +18,16 @@ jobs:
     name: Set Buildtime and Runtime Environment Variables
     runs-on: ubuntu-latest
     steps:
-      - name: Setting ${{github.event.inputs.environment}} Environment # TODO: update Cloud Run service name
+      - name: Setting ${{github.event.inputs.environment}} Environment
         id: env_type
         run: |
-          if [ "${{ github.event.inputs.environment }}" = "staging" ] && [ "${{ github.ref }}" != "refs/heads/main" ] && [ "${{ github.ref }}" != "refs/heads/prod" ]; then
-            echo "SERVICE=ribby-test" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.inputs.environment }}" = "production" ] && [ "${{ github.ref }}" == "refs/heads/prod" ]; then
-            echo "SERVICE=ribby" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event.inputs.environment }}" = "production" ] && { [[ "${{ github.ref }}" != "refs/heads/alpha" ]] && [[ "${{ github.ref }}" != "refs/heads/beta" ]] && [[ "${{ github.ref }}" != "refs/heads/prod" ]]; }; then
+              echo "ERROR: This workflow should only be triggered on a production (alpha, beta, prod) or a feature branch."
+              exit 1
+          elif [ "${{ github.event.inputs.environment }}" = "production" ] && { [[ "${{ github.ref }}" = "refs/heads/alpha" ]] || [[ "${{ github.ref }}" = "refs/heads/beta" ]] || [[ "${{ github.ref }}" = "refs/heads/prod" ]]; }; then
+              echo "SERVICE=ribby" >> "$GITHUB_OUTPUT"
           else
-            echo "ERROR: This workflow should only be triggered on a production (alpha, beta, prod) or a feature branch."
-            exit 1
+              echo "SERVICE=ribby-test" >> "$GITHUB_OUTPUT"
           fi
       - name: Show Environment type
         run: |
