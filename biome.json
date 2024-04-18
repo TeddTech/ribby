@@ -3,6 +3,9 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"a11y": {
+				"useValidAnchor": "off"
+			},
 			"security": {
 				"noDangerouslySetInnerHtml": "warn"
 			}

@@ -3,11 +3,12 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 30px 40px;
+  padding: 15px 40px;
 }
 
 .logo {
   display: inline-block;
+  max-height: 43;
 }
 .logo a {
   display: block;
@@ -15,6 +16,7 @@
 
 .header {
   background-color: var(--header-background);
+  border-bottom: 1px solid lightgrey; 
 }
 
 .header ul {
@@ -33,14 +35,15 @@
 }
 
 .header li a {
-  color: white;
-  display: inline-block;
-  padding: 0;
+  color: var(--text-color);
+  /* display: inline-block;
+  padding: 0; */
   text-decoration: none;
 }
 
 .header li a:hover {
   color: var(--qwik-light-blue);
+  text-decoration: underline;
 }
 
 @media (min-width: 450px) {

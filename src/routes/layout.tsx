@@ -1,4 +1,10 @@
-import { Slot, component$ } from "@builder.io/qwik";
+import {
+	Slot,
+	component$,
+	createContextId,
+	useContextProvider,
+	useSignal,
+} from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
@@ -14,7 +20,15 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 	});
 };
 
+export interface IsProfilePageContext {
+	value: boolean;
+}
+export const isProfilePageContext =
+	createContextId<IsProfilePageContext>("isProfilePage");
+
 export default component$(() => {
+	const isProfilePage = useSignal();
+	useContextProvider(isProfilePageContext, isProfilePage);
 	return (
 		<>
 			<Header />
