@@ -34,7 +34,7 @@ export default component$(() => {
 	const signIn = useAuthSignin();
 	const providers = useResource$(async () => {
 		if (import.meta.env.VITE_VERCEL_ENV) {
-			return getProviders();
+			return await getProviders();
 		}
 		const response = await fetch(`${loc.url.origin}/api/auth/providers`);
 		const data = await response.json();

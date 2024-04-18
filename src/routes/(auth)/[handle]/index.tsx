@@ -30,11 +30,13 @@ export default component$(() => {
 		<>
 			{isPersonalProfile ? (
 				<>
-					<div>PERSONAL page</div>
-					<br />
-					<div>Welome {session.value.user.name}</div>
-					<br />
-					<div>Handle: {user.value.handle}</div>
+					<div class="relative flex shrink-0 flex-col">
+						<div>PERSONAL page</div>
+						<br />
+						<div>Welome {session.value.user.name}</div>
+						<br />
+						<div>Handle: {user.value.handle}</div>
+					</div>
 				</>
 			) : (
 				<div>This is {user.value.name}'s profile page</div>

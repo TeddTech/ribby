@@ -14,7 +14,7 @@ export default component$(() => {
 		<>
 			<div>
 				<p>LOGGED OUT</p>
-				<a href="/login/">Sign Back in</a>
+				<a href="/login">Log back in</a>
 			</div>
 		</>
 	);

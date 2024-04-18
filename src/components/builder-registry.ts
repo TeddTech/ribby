@@ -1,5 +1,9 @@
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
-import Counter from "./counter/counter";
+import Logo from "./logo";
+import MapIcon from "./map-icon";
+import MessagesIcon from "./messages-icon";
+import NavigationProfileIcon from "./navigation-profile-icon";
+import ProfilePhotoIcon from "./profile-photo-icon";
 
 /**
  * This array is used to integrate custom components within Builder.
@@ -12,14 +16,29 @@ import Counter from "./counter/counter";
  * https://www.builder.io/c/docs/guides/components-only-mode
  */
 export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
-  {
-    component: Counter,
-    name: "Counter",
-    inputs: [
-      {
-        name: "initialValue",
-        type: "number",
-      },
-    ],
-  },
+	{
+		component: Logo,
+		name: "Logo",
+		inputs: [],
+	},
+	{
+		component: MapIcon,
+		name: "Map Icon",
+		inputs: [],
+	},
+	{
+		component: MessagesIcon,
+		name: "Messages Icon",
+		inputs: [],
+	},
+	{
+		component: NavigationProfileIcon,
+		name: "Navigation Profile Icon",
+		inputs: [],
+	},
+	{
+		component: ProfilePhotoIcon,
+		name: "Profile Photo Icon",
+		inputs: [],
+	},
 ];
