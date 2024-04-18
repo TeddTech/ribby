@@ -5,7 +5,7 @@ import {
 	ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { isDev } from "@builder.io/qwik/build";
-import PrelineUI from "../node_modules/preline/preline.js?raw";
+import UI from "../node_modules/preline/preline.js?raw";
 import { RouterHead } from "./components/router-head/router-head";
 import "./global.css";
 
@@ -70,7 +70,7 @@ export default component$(() => {
 			</head>
 			<body lang="en">
 				<RouterOutlet />
-				<script dangerouslySetInnerHTML={PrelineUI as string} />
+				<script dangerouslySetInnerHTML={UI as string} />
 			</body>
 		</QwikCityProvider>
 	);
