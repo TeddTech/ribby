@@ -20,11 +20,11 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 	});
 };
 
-export interface IsProfilePageContext {
+export interface BooleanContext {
 	value: boolean;
 }
 export const isProfilePageContext =
-	createContextId<IsProfilePageContext>("isProfilePage");
+	createContextId<BooleanContext>("isProfilePage");
 
 export default component$(() => {
 	const isProfilePage = useSignal();
