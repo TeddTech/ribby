@@ -1,4 +1,5 @@
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
+import AppIcons from "./app-icons";
 import Logo from "./logo";
 import MapIcon from "./map-icon";
 import MessagesIcon from "./messages-icon";
@@ -16,6 +17,11 @@ import ProfilePhotoIcon from "./profile-photo-icon";
  * https://www.builder.io/c/docs/guides/components-only-mode
  */
 export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
+	{
+		component: AppIcons,
+		name: "App Icons",
+		inputs: [],
+	},
 	{
 		component: Logo,
 		name: "Logo",
