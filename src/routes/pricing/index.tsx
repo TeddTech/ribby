@@ -29,10 +29,10 @@ export default component$(() => {
 
 					<label class="relative ms-3 min-w-14 text-sm text-gray-500 dark:text-gray-400">
 						Annual
-						<span class="absolute -end-28 -top-10 start-auto">
+						<span class="absolute -top-12 end-[36px] start-auto sm:-end-28 sm:-top-10">
 							<span class="flex items-center">
 								<svg
-									class="-me-6 h-8 w-14"
+									class="-me-6 hidden h-8 w-14 sm:inline"
 									width="45"
 									height="25"
 									viewBox="0 0 45 25"
@@ -429,13 +429,13 @@ export default component$(() => {
 
 					<div class="space-y-24 lg:hidden">
 						<section>
-							<div class="mb-4 px-4">
+							<div class="mb-4 px-1 xs:px-4">
 								<h2 class="text-lg font-medium leading-6 text-gray-800">
 									Free
 								</h2>
 							</div>
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									Financial data
 								</caption>
 								<thead>
@@ -451,12 +451,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Open/High/Low/Close
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -479,12 +479,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Price-volume difference indicator
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -508,7 +508,7 @@ export default component$(() => {
 							</table>
 
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									On-chain data
 								</caption>
 								<thead>
@@ -524,12 +524,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Network growth
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -552,12 +552,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Average token age consumed
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -580,12 +580,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Exchange flow
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -608,12 +608,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total ERC20 exchange funds flow
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -636,12 +636,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Transaction volume
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -664,12 +664,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total circulation (beta)
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -692,12 +692,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Velocity of tokens (beta)
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -720,12 +720,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											ETH gas used
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -749,7 +749,7 @@ export default component$(() => {
 							</table>
 
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									Social data
 								</caption>
 								<thead>
@@ -765,12 +765,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Dev activity
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -793,12 +793,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Topic search
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -821,12 +821,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Relative social dominance
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -849,12 +849,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total social volume
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -879,13 +879,13 @@ export default component$(() => {
 						</section>
 
 						<section>
-							<div class="mb-4 px-4">
+							<div class="mb-4 px-1 xs:px-4">
 								<h2 class="text-lg font-medium leading-6 text-gray-800">
 									Startup
 								</h2>
 							</div>
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									Financial data
 								</caption>
 								<thead>
@@ -901,12 +901,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Open/High/Low/Close
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -929,12 +929,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Price-volume difference indicator
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -958,7 +958,7 @@ export default component$(() => {
 							</table>
 
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									On-chain data
 								</caption>
 								<thead>
@@ -974,12 +974,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Network growth
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1002,12 +1002,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Average token age consumed
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1030,12 +1030,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Exchange flow
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1058,12 +1058,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total ERC20 exchange funds flow
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1086,12 +1086,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Transaction volume
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1114,12 +1114,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total circulation (beta)
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1142,12 +1142,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Velocity of tokens (beta)
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1170,12 +1170,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											ETH gas used
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1199,7 +1199,7 @@ export default component$(() => {
 							</table>
 
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									Social data
 								</caption>
 								<thead>
@@ -1215,12 +1215,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Dev activity
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1243,12 +1243,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Topic search
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1271,12 +1271,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Relative social dominance
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1299,12 +1299,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total social volume
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1329,13 +1329,13 @@ export default component$(() => {
 						</section>
 
 						<section>
-							<div class="mb-4 px-4">
+							<div class="mb-4 px-1 xs:px-4">
 								<h2 class="text-lg font-medium leading-6 text-gray-800">
 									Team
 								</h2>
 							</div>
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									Financial data
 								</caption>
 								<thead>
@@ -1351,12 +1351,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Open/High/Low/Close
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1379,12 +1379,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Price-volume difference indicator
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1408,7 +1408,7 @@ export default component$(() => {
 							</table>
 
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									On-chain data
 								</caption>
 								<thead>
@@ -1424,12 +1424,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Network growth
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1452,12 +1452,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Average token age consumed
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1480,12 +1480,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Exchange flow
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1508,12 +1508,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total ERC20 exchange funds flow
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1536,12 +1536,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Transaction volume
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1564,12 +1564,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total circulation (beta)
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1592,12 +1592,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Velocity of tokens (beta)
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1620,12 +1620,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											ETH gas used
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1649,7 +1649,7 @@ export default component$(() => {
 							</table>
 
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									Social data
 								</caption>
 								<thead>
@@ -1665,12 +1665,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Dev activity
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1693,12 +1693,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Topic search
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1721,12 +1721,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Relative social dominance
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1749,12 +1749,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total social volume
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-gray-400 dark:text-gray-600"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1779,13 +1779,13 @@ export default component$(() => {
 						</section>
 
 						<section>
-							<div class="mb-4 px-4">
+							<div class="mb-4 px-1 xs:px-4">
 								<h2 class="text-lg font-medium leading-6 text-gray-800">
 									Enterprise
 								</h2>
 							</div>
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									Financial data
 								</caption>
 								<thead>
@@ -1801,12 +1801,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Open/High/Low/Close
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1829,12 +1829,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Price-volume difference indicator
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1858,7 +1858,7 @@ export default component$(() => {
 							</table>
 
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									On-chain data
 								</caption>
 								<thead>
@@ -1874,12 +1874,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Network growth
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1902,12 +1902,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Average token age consumed
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1930,12 +1930,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Exchange flow
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1958,12 +1958,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total ERC20 exchange funds flow
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -1986,12 +1986,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Transaction volume
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -2014,12 +2014,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total circulation (beta)
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -2042,12 +2042,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Velocity of tokens (beta)
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -2070,12 +2070,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											ETH gas used
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -2099,7 +2099,7 @@ export default component$(() => {
 							</table>
 
 							<table class="w-full">
-								<caption class="border-t border-gray-200 bg-gray-50 px-4 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+								<caption class="border-t border-gray-200 bg-gray-50 px-1 py-3 text-start text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-700 dark:text-white xs:px-4">
 									Social data
 								</caption>
 								<thead>
@@ -2115,12 +2115,12 @@ export default component$(() => {
 								<tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Dev activity
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -2143,12 +2143,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Topic search
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -2171,12 +2171,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Relative social dominance
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"
@@ -2199,12 +2199,12 @@ export default component$(() => {
 
 									<tr class="border-t border-gray-200 dark:border-gray-700">
 										<th
-											class="whitespace-nowrap px-4 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400"
+											class="whitespace-nowrap px-1 py-5 text-start text-sm font-normal text-gray-600 dark:text-gray-400 xs:px-4"
 											scope="row"
 										>
 											Total social volume
 										</th>
-										<td class="py-5 pe-4">
+										<td class="px-2 py-5 xs:pe-4">
 											<svg
 												class="ms-auto size-5 flex-shrink-0 text-blue-600 dark:text-blue-500"
 												xmlns="http://www.w3.org/2000/svg"

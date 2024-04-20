@@ -5,11 +5,10 @@ interface Props {
 }
 
 export default component$<Props>(({ size = "62px" }) => {
+	const profilePhotoIconClass = `inline-block size-[${size}] mr-5 overflow-hidden rounded-full bg-gray-100`;
 	return (
 		<>
-			<span
-				class={`inline-block size-[${size}] mr-5 overflow-hidden rounded-full bg-gray-100`}
-			>
+			<span class={profilePhotoIconClass}>
 				<svg
 					class="size-full text-gray-300"
 					width="16"
