@@ -1,0 +1,16 @@
+{
+  "id": "mig_cooorn11biak476m7hcg",
+  "parentID": "mig_cooor311biak476m7hbg",
+  "checksum": "1:eb36e675cb35dd15f4a7983a4e5b5625c1938e1f85361221f6a0217dcfc1a298",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "acceptanceRate",
+          "type": "float"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "mig_copcpmh1biak476m7n40",
+  "parentID": "mig_copcpffm3296cfimig7g",
+  "checksum": "1:c1e1c0945b230881783914d8a7c6331d08f8e9d94d54b7e7e6895e7fa7dfe581",
+  "operations": [
+    {
+      "addTable": {
+        "table": "followers"
+      }
+    }
+  ]
+}

@@ -35,18 +35,31 @@ export default component$(() => {
 			<div
 				id="hs-overlay-right"
 				class="hs-overlay fixed end-0 top-0 z-[80] hidden h-full w-full translate-x-full transform border-s bg-white transition-all duration-300 hs-overlay-open:translate-x-0 dark:border-gray-700 dark:bg-gray-800 sm:max-w-xs"
-				// @ts-ignore
-				tabindex="-1"
+				tabIndex={-1}
 			>
 				<div class="flex items-center justify-between rounded-t-lg border-b bg-gray-100 px-4 py-3 dark:border-gray-700 dark:bg-gray-700">
 					<div class="flex items-center">
-						<ProfilePhotoIcon size="47px" />
-						<div class="-m-2 rounded-t-lg bg-gray-100 dark:bg-gray-700">
+						{session.value && (
+							<ProfilePhotoIcon
+								size="size-[47px]"
+								src={session.value.user.image}
+							/>
+						)}
+						<div class="-m-2 ml-3 rounded-t-lg bg-gray-100 dark:bg-gray-700">
 							<p class="text-sm text-gray-500 dark:text-gray-400">
-								Signed in as
+								{session.value ? (
+									"Signed in as"
+								) : (
+									<a
+										class="-ml-3 flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:bg-gray-100 focus:outline-none dark:text-white dark:hover:bg-gray-600 dark:hover:text-gray-300 dark:focus:bg-gray-700"
+										href="/login"
+									>
+										Currenlty signed out
+									</a>
+								)}
 							</p>
 							<p class="text-sm font-medium text-gray-800 dark:text-gray-300">
-								{session.value?.user.handle || "handle-staging"}
+								{session.value?.user.handle}
 							</p>
 						</div>
 					</div>
@@ -116,16 +129,25 @@ export default component$(() => {
 							Account Settings
 						</a>
 
-						<button
-							type="button"
-							class="flex w-full items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 hover:underline focus:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700"
-							data-hs-overlay="#hs-stacked-overlays-2"
-							data-hs-overlay-options='{
+						{session.value ? (
+							<button
+								type="button"
+								class="flex w-full items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 hover:underline focus:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700"
+								data-hs-overlay="#hs-stacked-overlays-2"
+								data-hs-overlay-options='{
 				"isClosePrev": false
 			  }'
-						>
-							Sign out
-						</button>
+							>
+								Sign out
+							</button>
+						) : (
+							<a
+								class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700"
+								href="/login"
+							>
+								Sign in
+							</a>
+						)}
 					</div>
 				</div>
 			</div>

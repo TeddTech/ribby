@@ -15,12 +15,25 @@ const tables = [
 			{ name: "name", type: "string" },
 			{ name: "image", type: "string" },
 			{ name: "handle", type: "string", unique: true },
+			{ name: "bio", type: "text" },
+			{ name: "profileType", type: "int", notNull: true, defaultValue: "1" },
+			{ name: "personaWebsite", type: "string" },
+			{ name: "acceptanceRate", type: "float" },
+			{ name: "followers", type: "int", notNull: true, defaultValue: "0" },
+			{ name: "following", type: "int", notNull: true, defaultValue: "0" },
+			{ name: "topOne", type: "string" },
+			{ name: "topTwo", type: "string" },
+			{ name: "topThree", type: "string" },
+			{ name: "topFour", type: "string" },
+			{ name: "topFive", type: "string" },
 		],
 		revLinks: [
 			{ column: "user", table: "nextauth_accounts" },
 			{ column: "user", table: "nextauth_users_accounts" },
 			{ column: "user", table: "nextauth_users_sessions" },
 			{ column: "user", table: "nextauth_sessions" },
+			{ column: "follower", table: "followers" },
+			{ column: "following", table: "followers" },
 		],
 	},
 	{
@@ -80,6 +93,13 @@ const tables = [
 			{ name: "pubDate", type: "datetime" },
 		],
 	},
+	{
+		name: "followers",
+		columns: [
+			{ name: "follower", type: "link", link: { table: "nextauth_users" } },
+			{ name: "following", type: "link", link: { table: "nextauth_users" } },
+		],
+	},
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -108,6 +128,9 @@ export type NextauthSessionsRecord = NextauthSessions & XataRecord;
 export type BlogPosts = InferredTypes["blog-posts"];
 export type BlogPostsRecord = BlogPosts & XataRecord;
 
+export type Followers = InferredTypes["followers"];
+export type FollowersRecord = Followers & XataRecord;
+
 export type DatabaseSchema = {
 	nextauth_users: NextauthUsersRecord;
 	nextauth_accounts: NextauthAccountsRecord;
@@ -116,6 +139,7 @@ export type DatabaseSchema = {
 	nextauth_users_sessions: NextauthUsersSessionsRecord;
 	nextauth_sessions: NextauthSessionsRecord;
 	"blog-posts": BlogPostsRecord;
+	followers: FollowersRecord;
 };
 
 const DatabaseClient = buildClient();

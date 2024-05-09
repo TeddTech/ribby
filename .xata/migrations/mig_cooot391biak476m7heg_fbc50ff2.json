@@ -1,0 +1,18 @@
+{
+  "id": "mig_cooot391biak476m7heg",
+  "parentID": "mig_cooors11biak476m7hdg",
+  "checksum": "1:fbc50ff2d7079e8bd81ef50855b013a15f11909aa9674ed28b19a5544947ac3b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "following",
+          "type": "int",
+          "notNull": true,
+          "defaultValue": "0"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

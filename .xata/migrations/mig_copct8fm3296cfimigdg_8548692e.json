@@ -1,0 +1,16 @@
+{
+  "id": "mig_copct8fm3296cfimigdg",
+  "parentID": "mig_copcsph1biak476m7n60",
+  "checksum": "1:8548692e0fa92a80f6a6e8b252fc5390ed58a4c51112f3767436ea093a648e48",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "topOne",
+          "type": "string"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

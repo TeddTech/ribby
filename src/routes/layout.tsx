@@ -4,6 +4,7 @@ import {
 	createContextId,
 	useContextProvider,
 	useSignal,
+	useVisibleTask$,
 } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import Footer from "../components/footer/footer";
@@ -27,15 +28,26 @@ export const isProfilePageContext =
 	createContextId<BooleanContext>("isProfilePage");
 
 export default component$(() => {
-	const isProfilePage = useSignal();
+	const isProfilePage = useSignal<boolean>();
 	useContextProvider(isProfilePageContext, isProfilePage);
+
+	const isProfile = useSignal<boolean | undefined>(true);
+	// eslint-disable-next-line qwik/no-use-visible-task
+	useVisibleTask$(
+		() => {
+			const value = isProfilePage.value;
+			isProfile.value = value;
+		},
+		{ strategy: "document-ready" },
+	);
+
 	return (
 		<>
 			<Header />
 			<main>
 				<Slot />
 			</main>
-			<Footer />
+			{!isProfile.value && <Footer textWhite={true} />}
 		</>
 	);
 });
