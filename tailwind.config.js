@@ -9,18 +9,8 @@ export default {
 		extend: {
 			screens: {
 				xs: "361px",
+				md: "992px",
 			},
-			// colors: {
-			// 	blue: {
-			// 		100: "#EAE2F7",
-			// 		// 	200: "#1a202c",
-			// 		500: "#7334AE",
-			// 		600: "#7334AE",
-			// 		// 	700: "#1a202c",
-			// 		// 	800: "#1a202c",
-			// 		// 	900: "#1a202c",
-			// 	},
-			// },
 		},
 	},
 	plugins: [require("preline/plugin"), require("@tailwindcss/forms")],

@@ -130,6 +130,10 @@ a:hover {
   /* color: var(--qwik-light-blue); */
 }
 
+#footer-links a {
+	color: white;
+}
+
 code {
   background: rgba(230, 230, 230, 0.3);
   border-radius: 4px;

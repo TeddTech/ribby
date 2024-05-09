@@ -41,7 +41,7 @@ export const onRequest: RequestHandler = (event) => {
 export default component$(() => {
 	return (
 		<>
-			<div class="py-3">
+			<div class="py-3 pb-10">
 				<div class="mx-auto max-w-3xl rounded-xl border border-gray-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
 					<div class="p-4 sm:p-7">
 						<div class="text-center">
@@ -62,11 +62,11 @@ export default component$(() => {
 
 						<div class="mt-5">
 							<Providers />
-							<div class="flex items-center py-3 text-xs uppercase text-gray-400 before:me-6 before:flex-1 before:border-t before:border-gray-200 after:ms-6 after:flex-1 after:border-t after:border-gray-200 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">
+							{/* <div class="flex items-center py-3 text-xs uppercase text-gray-400 before:me-6 before:flex-1 before:border-t before:border-gray-200 after:ms-6 after:flex-1 after:border-t after:border-gray-200 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">
 								Or
-							</div>
+							</div> */}
 
-							<form>
+							{/* <form>
 								<div class="grid gap-y-4">
 									<div>
 										<label
@@ -209,7 +209,7 @@ export default component$(() => {
 										Sign up
 									</button>
 								</div>
-							</form>
+							</form> */}
 						</div>
 					</div>
 				</div>

@@ -3,6 +3,7 @@ import { server$ } from "@builder.io/qwik-city";
 import { RenderContent, getContent } from "@builder.io/sdk-qwik";
 import type { BuilderContent } from "@builder.io/sdk-qwik/types/types/builder-content";
 import type { Nullable } from "@builder.io/sdk-qwik/types/types/typescript";
+import { CUSTOM_COMPONENTS } from "../builder-registry";
 
 export const BUILDER_MODEL = "authenticate-button";
 
@@ -44,6 +45,7 @@ export default component$(() => {
 			model={BUILDER_MODEL}
 			content={state.content}
 			apiKey={state.API_KEY}
+			customComponents={CUSTOM_COMPONENTS}
 		/>
 	);
 });

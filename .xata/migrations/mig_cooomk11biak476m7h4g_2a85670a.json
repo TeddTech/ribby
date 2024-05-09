@@ -1,0 +1,16 @@
+{
+  "id": "mig_cooomk11biak476m7h4g",
+  "parentID": "mig_co8vfj9amcpq6ii7sung",
+  "checksum": "1:2a85670ab6f783ee525bff2e8847f4d9d7a1007d86d960148f48ee8146967af1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "bio",
+          "type": "text"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

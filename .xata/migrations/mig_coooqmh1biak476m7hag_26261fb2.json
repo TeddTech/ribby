@@ -1,0 +1,18 @@
+{
+  "id": "mig_coooqmh1biak476m7hag",
+  "parentID": "mig_cooop411biak476m7h6g",
+  "checksum": "1:26261fb2fdec78766ca0c94b1022a0dad542d13da9775e939c3b75ea0a337757",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "profileType",
+          "type": "int",
+          "notNull": true,
+          "defaultValue": "1"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

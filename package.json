@@ -44,13 +44,21 @@
   },
   "dependencies": {
     "@auth/xata-adapter": "^0.6.0",
+    "@builder.io/sdk": "^2.2.2",
+    "@tiptap/core": "^2.3.0",
+    "@tiptap/extension-link": "^2.3.0",
+    "@tiptap/extension-placeholder": "^2.3.0",
+    "@tiptap/extension-underline": "^2.3.0",
+    "@tiptap/pm": "^2.3.0",
+    "@tiptap/starter-kit": "^2.3.0",
+    "@unpic/qwik": "^0.0.46",
     "@xata.io/client": "^0.29.3",
-    "preline": "^2.0.3"
+    "preline": "^2.1.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "prettier --write",
-      "npx @biomejs/biome format --write",
+	  "npx @biomejs/biome format --write",
       "npx @biomejs/biome lint --apply",
       "eslint --max-warnings 0 ."
     ],

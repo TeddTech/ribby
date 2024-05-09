@@ -52,7 +52,9 @@ export default component$(() => {
 				)}
 				onRejected={(error) => (
 					<>
-						<div class="text-black">Error: {error.message}</div>
+						<div class="text-black">
+							Please reload Page due to the following error: {error.message}
+						</div>
 					</>
 				)}
 				onResolved={(providers) =>

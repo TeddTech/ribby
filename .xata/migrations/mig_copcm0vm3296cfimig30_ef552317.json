@@ -1,0 +1,16 @@
+{
+  "id": "mig_copcm0vm3296cfimig30",
+  "parentID": "mig_copckufm3296cfimig20",
+  "checksum": "1:ef5523178c820d9cf15d2a53c0d4ba27fe4ebf5666303070a231ca0d46d2e4b3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "follower_id",
+          "type": "string"
+        },
+        "table": "followers"
+      }
+    }
+  ]
+}

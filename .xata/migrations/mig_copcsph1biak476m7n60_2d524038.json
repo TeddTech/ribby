@@ -1,0 +1,13 @@
+{
+  "id": "mig_copcsph1biak476m7n60",
+  "parentID": "mig_copcrtfm3296cfimigag",
+  "checksum": "1:2d5240383ebf9a39a0b341acebd694ca1db941f36d79af8282c9f0f41bd03e00",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "topFive",
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

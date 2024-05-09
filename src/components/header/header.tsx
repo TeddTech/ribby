@@ -14,24 +14,26 @@ export default component$(() => {
 	});
 	return (
 		<>
-			<header class="z-50 flex w-full flex-wrap bg-white py-3 text-sm dark:bg-neutral-900 sm:flex-nowrap sm:justify-start sm:py-0">
+			<header class="z-1000 flex w-full flex-wrap bg-white text-sm dark:bg-neutral-900 sm:flex-nowrap sm:justify-start">
 				<div class="relative mx-auto my-2 w-full max-w-[86rem] px-4 sm:px-6">
 					<nav
 						class={`${
 							isProfile.value
 								? "flex flex-col items-center justify-between xs:flex-row"
 								: "sm:flex sm:items-center sm:justify-between"
-						} border-b dark:border-neutral-700`}
+						} border-b py-1 dark:border-neutral-700`}
 						aria-label="Global"
 					>
 						<div class="flex items-center justify-between">
 							<div
 								class={`flex max-w-16 ${
 									isProfile.value && "flex-col"
-								} mb-5 mt-3 items-center xs:flex-row`}
+								} my-3 items-center xs:flex-row`}
 							>
-								<Logo />
-								<p class="px-3 text-3xl font-semibold">Ribby</p>
+								<a href="/" class="z-50 flex flex-row items-center">
+									<Logo isNavBar={false} />
+									<p class="px-2 text-2xl font-semibold">Ribby</p>
+								</a>
 							</div>
 							{!isProfile.value && (
 								<div class="sm:hidden">
@@ -90,13 +92,6 @@ export default component$(() => {
 										>
 											Tutorials
 										</a>
-										<a
-											class="font-semibold text-gray-500 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 sm:py-6"
-											href="/blog"
-										>
-											Blog
-										</a>
-
 										<div class="hs-dropdown [--adaptive:none] [--strategy:static] sm:py-4 sm:[--strategy:fixed] sm:[--trigger:hover]">
 											<button
 												type="button"
@@ -180,9 +175,9 @@ export default component$(() => {
 												</a>
 												<a
 													class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300"
-													href="#"
+													href="/blog"
 												>
-													Team Account
+													Blog
 												</a>
 											</div>
 										</div>
