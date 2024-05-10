@@ -1,0 +1,13 @@
+{
+  "id": "mig_cou9jdo0agrkob70dqd0",
+  "parentID": "mig_cou9jco0agrkob70dqc0",
+  "checksum": "1:ed29b07c9ab354f22471f9271d676b151a1017c505ce64e5bbfe36f453e0118c",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "topFour",
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

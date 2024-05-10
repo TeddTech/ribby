@@ -17,15 +17,17 @@ const tables = [
 			{ name: "handle", type: "string", unique: true },
 			{ name: "bio", type: "text" },
 			{ name: "profileType", type: "int", notNull: true, defaultValue: "1" },
-			{ name: "personaWebsite", type: "string" },
+			{ name: "personalWebsite", type: "string" },
 			{ name: "acceptanceRate", type: "float" },
 			{ name: "followers", type: "int", notNull: true, defaultValue: "0" },
 			{ name: "following", type: "int", notNull: true, defaultValue: "0" },
-			{ name: "topOne", type: "string" },
-			{ name: "topTwo", type: "string" },
-			{ name: "topThree", type: "string" },
-			{ name: "topFour", type: "string" },
-			{ name: "topFive", type: "string" },
+			{
+				name: "topPerformers",
+				type: "json",
+				notNull: true,
+				defaultValue:
+					'{\n  "one": "sir",\n  "two": "sir",\n  "three": "sir",\n  "four": "sir",\n  "five": "sir"\n}',
+			},
 		],
 		revLinks: [
 			{ column: "user", table: "nextauth_accounts" },

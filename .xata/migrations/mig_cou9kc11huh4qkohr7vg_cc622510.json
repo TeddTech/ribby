@@ -1,0 +1,18 @@
+{
+  "id": "mig_cou9kc11huh4qkohr7vg",
+  "parentID": "mig_cou9jf00agrkob70dqe0",
+  "checksum": "1:cc62251019e9404a93ebc6e2fa689f129a6340539d281237197d5e6f9d15c20f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "topPerformers",
+          "type": "json",
+          "notNull": true,
+          "defaultValue": "{\n  \"one\": \"sir\",\n  \"two\": \"sir\",\n  \"three\": \"sir\",\n  \"four\": \"sir\",\n  \"five\": \"sir\"\n}"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}
