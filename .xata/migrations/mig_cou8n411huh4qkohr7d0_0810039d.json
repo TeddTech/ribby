@@ -1,0 +1,14 @@
+{
+  "id": "mig_cou8n411huh4qkohr7d0",
+  "parentID": "mig_copctn91biak476m7n9g",
+  "checksum": "1:0810039d596796ae4ed93eff0b4fcad17db156c697aa604d36b34bc589d43fdd",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "personalWebsite",
+        "oldName": "personaWebsite",
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}
